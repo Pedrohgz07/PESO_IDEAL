@@ -1,0 +1,16 @@
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\bin\Debug\net8.0-windows\PESO_IDEAL.exe
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\bin\Debug\net8.0-windows\PESO_IDEAL.deps.json
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\bin\Debug\net8.0-windows\PESO_IDEAL.runtimeconfig.json
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\bin\Debug\net8.0-windows\PESO_IDEAL.dll
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\bin\Debug\net8.0-windows\PESO_IDEAL.pdb
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.frmPeso_Ideal.resources
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.csproj.GenerateResource.cache
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.AssemblyInfoInputs.cache
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.AssemblyInfo.cs
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.csproj.CoreCompileInputs.cache
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.dll
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\refint\PESO_IDEAL.dll
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.pdb
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.genruntimeconfig.cache
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\ref\PESO_IDEAL.dll
