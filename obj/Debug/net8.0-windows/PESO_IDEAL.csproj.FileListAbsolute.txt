@@ -14,3 +14,4 @@ C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj
 C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.pdb
 C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.genruntimeconfig.cache
 C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\ref\PESO_IDEAL.dll
+C:\Users\pedro\OneDrive\Escritorio\Programacion orientado objetos\PESO_IDEAL\obj\Debug\net8.0-windows\PESO_IDEAL.sourcelink.json

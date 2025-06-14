@@ -46,7 +46,7 @@
             txtKm = new TextBox();
             lblKilometros = new Label();
             label2 = new Label();
-            txtFaltante = new TextBox();
+            txtfaltante = new TextBox();
             SuspendLayout();
             // 
             // lblEstatura
@@ -64,6 +64,7 @@
             txtEstatura.Name = "txtEstatura";
             txtEstatura.Size = new Size(106, 23);
             txtEstatura.TabIndex = 1;
+            txtEstatura.KeyPress += txtEstatura_KeyPress;
             // 
             // lblPeso
             // 
@@ -80,6 +81,7 @@
             txtPeso.Name = "txtPeso";
             txtPeso.Size = new Size(106, 23);
             txtPeso.TabIndex = 3;
+            txtPeso.KeyPress += txtPeso_KeyPress;
             // 
             // lblDistancia
             // 
@@ -96,6 +98,7 @@
             txtDistancia.Name = "txtDistancia";
             txtDistancia.Size = new Size(106, 23);
             txtDistancia.TabIndex = 5;
+            txtDistancia.KeyPress += txtDistancia_KeyPress;
             // 
             // label1
             // 
@@ -112,6 +115,7 @@
             txtPasos.Name = "txtPasos";
             txtPasos.Size = new Size(106, 23);
             txtPasos.TabIndex = 7;
+            txtPasos.KeyPress += txtPasos_KeyPress;
             // 
             // btnCalcular
             // 
@@ -196,19 +200,19 @@
             label2.TabIndex = 17;
             label2.Text = "Kilometros Faltante";
             // 
-            // txtFaltante
+            // txtfaltante
             // 
-            txtFaltante.Location = new Point(183, 506);
-            txtFaltante.Name = "txtFaltante";
-            txtFaltante.Size = new Size(202, 23);
-            txtFaltante.TabIndex = 18;
+            txtfaltante.Location = new Point(183, 506);
+            txtfaltante.Name = "txtfaltante";
+            txtfaltante.Size = new Size(202, 23);
+            txtfaltante.TabIndex = 18;
             // 
             // frmPeso_Ideal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(420, 544);
-            Controls.Add(txtFaltante);
+            Controls.Add(txtfaltante);
             Controls.Add(label2);
             Controls.Add(lblKilometros);
             Controls.Add(txtKm);
@@ -229,7 +233,6 @@
             Controls.Add(lblEstatura);
             Name = "frmPeso_Ideal";
             Text = "frmPeso_Ideal";
-            Load += frmPeso_Ideal_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -254,6 +257,6 @@
         private TextBox txtKm;
         private Label lblKilometros;
         private Label label2;
-        private TextBox txtFaltante;
+        private TextBox txtfaltante;
     }
 }

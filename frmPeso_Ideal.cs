@@ -18,41 +18,101 @@ namespace PESO_IDEAL
             Peso = new ClsPeso();
             InitializeComponent();
         }
-
-        private void frmPeso_Ideal_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtEstatura.Text) ||
+                string.IsNullOrWhiteSpace(txtPeso.Text) ||
+                string.IsNullOrWhiteSpace(txtDistancia.Text) ||
+                string.IsNullOrWhiteSpace(txtPasos.Text))
+            {
+                MessageBox.Show("Todos los campos son obligatorios.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            Peso.Estatura = int.Parse(txtEstatura.Text);  // en centímetros
-            Peso.Peso = float.Parse(txtPeso.Text);         // en kg
-            Peso.Sancada = float.Parse(txtDistancia.Text); // en metros
-            Peso.Pasos = float.Parse(txtPasos.Text);       // cantidad de pasos
+            Peso.Estatura = float.Parse(txtEstatura.Text);
+            Peso.Peso = float.Parse(txtPeso.Text);
+            Peso.Sancada = float.Parse(txtDistancia.Text);
+            Peso.Pasos = float.Parse(txtPasos.Text);
 
+            // Calcular resultados
+            float imc = Peso.CalcularIMC();
+            string estado;
+            string recomendacion = Peso.CalcularRecomendacion(out estado);
+            float kmRecorridos = Peso.CalcularKilometros();
+            float kmFaltantes = Peso.CalcularKmFaltantes();
 
-            Peso.CalcularPesoIdea();
+            // Mostrar resultados
+            txtIMC.Text = imc.ToString("0.00");
+            txtEstado.Text = estado;
+            txtRecomendado.Text = recomendacion;
+            txtKm.Text = kmRecorridos.ToString("0.00") + " km";
+            txtfaltante.Text = kmFaltantes.ToString("0.00") + " km";
 
-            float kilometros = Peso.CalcularKilometros();
-            float faltante = Peso.CalcularKmFaltantes();
-            float IMC = Peso.CalcularIMC();
-
-
-            txtIMC.Text = "" + IMC;
-            txtEstado.Text = "" + Peso.Estado;
-            txtRecomendado.Text = "" + Peso.Recomendacion;
-            txtKm.Text = "" + kilometros.ToString("0.00") + " km";
-            txtFaltante.Text = "" + faltante + "km";
-
+            // Limpiar campos de entrada solamente
             txtEstatura.Clear();
             txtPeso.Clear();
             txtDistancia.Clear();
             txtPasos.Clear();
-            txtFaltante.Clear();
         }
 
-   
+        //Validaciones
+        private void txtEstatura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            // Permitir solo teclas de control
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Bloquea letras, puntos, comas, símbolos, etc.
+            }
+        }
+
+        private void txtDistancia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == '.' && textBox.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPasos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (e.KeyChar == '.' && textBox.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+                return;
+            }
+            if (e.KeyChar == '.' && textBox.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
+
 }
+

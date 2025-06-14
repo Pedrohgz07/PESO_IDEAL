@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PESO_IDEAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50dc43eb380282a8ab2be07387406060ca9c6585")]
 [assembly: System.Reflection.AssemblyProductAttribute("PESO_IDEAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PESO_IDEAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

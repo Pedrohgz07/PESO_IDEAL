@@ -9,27 +9,22 @@ namespace PESO_IDEAL
 {
     class ClsPeso
     {
-        //Atributos
-        private int estatura;
-        private float peso;
-        private float sancada;
-        private float pasos;
-        private float IMC;
-        private string estado;
-        private string recomentacion;
-        //Constructor
+        private float estatura;// en  cm
+        private float peso;   // en kg
+        private float sancada;// en cm
+        private float pasos; // cantidad de pasos
+
+        // Constructor
         public ClsPeso()
         {
-            Estatura = 0;
-            Peso = 0;
-            Sancada = 0;
-            Pasos = 0;
-            Estado = "";
-            Recomendacion = "";
+            estatura = 0;
+            peso = 0;
+            sancada = 0;
+            pasos = 0;
         }
 
-        //propiedades
-        public int Estatura
+        // Propiedades
+        public float Estatura
         {
             get { return estatura; }
             set { estatura = value; }
@@ -53,90 +48,86 @@ namespace PESO_IDEAL
             set { pasos = value; }
         }
 
-        public string Estado
-        {
-            get { return estado; }
-            set { estado = value; }
-        }
-
-        public string Recomendacion
-        {
-            get { return recomentacion; }
-            set { recomentacion = value; }
-        }
+        // Método para calcular el IMC
         public float CalcularIMC()
         {
-            float IMC;
-            float estaturaMetros = estatura / 100.0f;  // Convertir cm a metros
-            IMC = Peso / (estaturaMetros * estaturaMetros);
-            return IMC;
-
+            float estaturaMetros = estatura / 100.0f;
+            float imc = peso / (estaturaMetros * estaturaMetros);
+            return imc;
         }
-        public string CalcularPesoIdea()
-        {
-            CalcularIMC();
 
-            if (IMC < 18.5)
+        // Método para determinar el estado y recomendación según el IMC
+        public string CalcularRecomendacion(out string estado)
+        {
+            float imc = CalcularIMC();
+            string recomendacion;
+
+            if (imc < 18.5f)
             {
-                Estado = "Bajo";
-                Recomendacion = "No debes caminar.";
+                estado = "Bajo";
+                recomendacion = "No debes caminar.";
             }
-            else if (IMC <= 24.9)
+            else if (imc <= 24.9f)
             {
-                Estado = "Normal";
-                Recomendacion = "Se recomienda caminar 4 km";
+                estado = "Normal";
+                recomendacion = "Se recomienda caminar 4 km.";
             }
-            else if (IMC <= 29.9)
+            else if (imc <= 29.9f)
             {
-                Estado = "Sobrepeso";
-                Recomendacion = "Se recomienda caminar 6 km";
+                estado = "Sobrepeso";
+                recomendacion = "Se recomienda caminar 6 km.";
             }
             else
             {
-                Estado = "Obesidad";
-                Recomendacion = "Se recomienda caminar 10 km";
+                estado = "Obesidad";
+                recomendacion = "Se recomienda caminar 10 km.";
             }
 
-            return Recomendacion;
+            return recomendacion;
         }
+
+        // Método para calcular los kilómetros recorridos
         public float CalcularKilometros()
         {
-            float km;
-            km = pasos * sancada / 1000;
+            float km = (pasos * sancada) / 100000f; // convertimos de cm a km
             return km;
         }
+
+        // Método para calcular cuántos kilómetros faltan según el estado
         public float CalcularKmFaltantes()
         {
             float kmRecorridos = CalcularKilometros();
-            float kmRecomendados = 0;
+            string estado;
+            CalcularRecomendacion(out estado);
+
+            float kmRecomendados;
 
             if (estado == "Normal")
             {
-                kmRecomendados = 4;
+                kmRecomendados = 4f;
             }
             else if (estado == "Sobrepeso")
             {
-                kmRecomendados = 6;
-            }         
+                kmRecomendados = 6f;
+            }
             else if (estado == "Obesidad")
             {
-                kmRecomendados = 10;
+                kmRecomendados = 10f;
             }
-                
             else
             {
-                kmRecomendados = 0;
+                kmRecomendados = 0f;
             }
-            float faltantes = kmRecomendados - kmRecorridos;
 
-           
-            return faltantes;
+            float kmFaltantes = kmRecomendados - kmRecorridos;
+
+            if (kmFaltantes < 0)
+            {
+                kmFaltantes = 0;
+            }
+
+            return kmFaltantes;
         }
-        public string _Estado
-        {
-            get { return estado; }
-        }
-
-
     }
 }
+    
